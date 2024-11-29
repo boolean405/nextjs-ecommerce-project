@@ -40,4 +40,4 @@ yarn-error.log*
 next-env.d.ts
 
 # custom
-package.lock.js
+package-lock.json
