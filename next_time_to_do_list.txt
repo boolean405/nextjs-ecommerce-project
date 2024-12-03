@@ -1,5 +1,3 @@
 5:50 hr
 fix error databases
 install select
-
-fix settings api
