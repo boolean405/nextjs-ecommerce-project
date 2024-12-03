@@ -22,7 +22,6 @@ const Navbar = async () => {
     <div className="border-b">
       <div className="flex h-16 items-center px-4">
         <StoreSwitcher items={stores} />
-        <div>This will be the routes</div>
         <MainNav className="mx-6" />
         <div className="flex ml-auto items-center space-x-4">
           <UserButton />

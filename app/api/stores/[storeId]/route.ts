@@ -41,6 +41,36 @@ export async function PATCH(
   }
 }
 
+export async function GET(
+  req: Request,
+  { params }: { params: { storeId: string } }
+) {
+  try {
+    const { storeId } = await params;
+    const { userId } = await auth();
+
+    if (!userId) {
+      return new NextResponse("Unauthenticated", { status: 401 });
+    }
+
+    if (!storeId) {
+      return new NextResponse("Store id is required", { status: 400 });
+    }
+
+    const store = await prismadb.store.findUnique({
+      where: {
+        id: storeId,
+        userId,
+      },
+    });
+
+    return NextResponse.json(store);
+  } catch (error) {
+    console.log("[STORE_GET]", error);
+    return new NextResponse("Internal error", { status: 500 });
+  }
+}
+
 export async function DELETE(
   req: Request,
   { params }: { params: { storeId: string } }
