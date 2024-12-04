@@ -1,4 +1,2 @@
-5:50 hr
-fix error databases
-install select
-d
+7 hr
+fix images upload
