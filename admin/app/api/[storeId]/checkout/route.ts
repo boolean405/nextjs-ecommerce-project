@@ -37,7 +37,7 @@ export async function POST(
 
   products.forEach((product) => {
     line_items.push({
-      quatity: 1,
+      quantity: 1,
       price_data: {
         currency: "THB",
         product_data: {
@@ -64,7 +64,7 @@ export async function POST(
     },
   });
 
-  const session = await stripe.Checkout.session.create({
+  const session = await stripe.checkout.sessions.create({
     line_items,
     mode: "payment",
     billing_address_collection: "required",
