@@ -67,6 +67,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const params = useParams();
   const router = useRouter();
 
+  const [field, setField] = useState({ value: [] });
+
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -162,9 +164,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 <FormLabel>Images</FormLabel>
                 <FormControl>
                   <ImageUpload
+                    presetName="nextjs-ecommerce-project-products"
                     value={field.value.map((image) => image.url)}
                     disable={loading}
-                    onChange={(url) =>
+                    onChange={
+                      (url) => 
+                        // field.onChange((prev: any) => [...prev, { url }])
                       field.onChange([...field.value, { url }])
                     }
                     onRemove={(url) =>

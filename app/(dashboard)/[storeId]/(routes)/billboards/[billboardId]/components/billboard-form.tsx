@@ -141,6 +141,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
                     disable={loading}
                     onChange={(url) => field.onChange(url)}
                     onRemove={() => field.onChange("")}
+                    presetName="nextjs-ecommerce-project-billboards"
                   />
                 </FormControl>
                 <FormMessage />

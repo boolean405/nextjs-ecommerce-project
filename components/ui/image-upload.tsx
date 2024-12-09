@@ -2,16 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { ImagePlusIcon, Trash } from "lucide-react";
+import { CldUploadWidget } from "next-cloudinary";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { CldUploadWidget } from "next-cloudinary";
 
 interface ImageUploadProps {
   disable?: boolean;
   onChange: (value: string) => void;
   onRemove: (value: string) => void;
   value: string[];
+  presetName: string;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -19,6 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   onChange,
   onRemove,
   value,
+  presetName,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -35,7 +37,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   }
 
   return (
-    <div>
+    <>
       <div className="mb-4 flex items-center gap-4">
         {value.map((url) => (
           <div
@@ -61,7 +63,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </div>
         ))}
       </div>
-      <CldUploadWidget onSuccess={onUpload} uploadPreset="nextjs-ecommerce-project">
+      <CldUploadWidget onSuccess={onUpload} uploadPreset={presetName}>
         {({ open }) => {
           const onClick = () => {
             open();
@@ -79,7 +81,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           );
         }}
       </CldUploadWidget>
-    </div>
+    </>
   );
 };
 
