@@ -1,3 +1,4 @@
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { CreditCard, DollarSign, Package } from "lucide-react";
 
 import { Heading } from "@/components/heading";

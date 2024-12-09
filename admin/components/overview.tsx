@@ -8,8 +8,8 @@ interface OverviewProps {
 
 export const Overview: React.FC<OverviewProps> = ({ data }) => {
   return (
-    <ResponsiveContainer with="100%" height="350">
-      <BarChart>
+    <ResponsiveContainer width="100%" height={350}>
+      <BarChart data={data}>
         <XAxis
           dataKey="name"
           stroke="#888888"
@@ -18,7 +18,7 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
           axisLine={false}
         />
 
-        <XAxis
+        <YAxis
           stroke="#888888"
           fontSize={12}
           tickLine={false}
