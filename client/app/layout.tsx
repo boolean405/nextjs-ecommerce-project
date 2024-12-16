@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import ModalProvider from "@/provider/modal-provider";
+import ToasterProvider from "@/provider/toast-provider";
 
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ModalProvider />
+        <ToasterProvider />
         <Navbar />
         {children}
         <Footer />
