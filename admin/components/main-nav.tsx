@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { useParams, usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { useParams, usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
