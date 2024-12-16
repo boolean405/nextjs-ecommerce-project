@@ -13,13 +13,8 @@ import MobileFilters from "./components/mobile-filters";
 export const revalidate = 0;
 
 interface CategoryProps {
-  params: {
-    categoryId: string;
-  };
-  searchParams: {
-    colorId: string;
-    sizeId: string;
-  };
+  params: Promise<{ categoryId: string }>;
+  searchParams: Promise<{ colorId: string; sizeId: string }>;
 }
 
 const CategoryPage: React.FC<CategoryProps> = async ({
