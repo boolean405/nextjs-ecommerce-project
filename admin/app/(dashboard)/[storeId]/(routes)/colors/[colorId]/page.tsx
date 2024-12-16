@@ -1,7 +1,11 @@
 import prismadb from "@/lib/prismadb";
 import { ColorForm } from "./components/color-form";
 
-const BillboardPage = async ({ params }: { params: { colorId: string } }) => {
+const BillboardPage = async ({
+  params,
+}: {
+  params: Promise<{ colorId: string }>;
+}) => {
   let color = null;
   const { colorId } = await params;
 

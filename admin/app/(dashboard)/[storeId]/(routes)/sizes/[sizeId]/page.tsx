@@ -1,7 +1,11 @@
 import prismadb from "@/lib/prismadb";
 import { SizeForm } from "./components/size-form";
 
-const BillboardPage = async ({ params }: { params: { sizeId: string } }) => {
+const BillboardPage = async ({
+  params,
+}: {
+  params: Promise<{ sizeId: string }>;
+}) => {
   let size = null;
   const { sizeId } = await params;
 
